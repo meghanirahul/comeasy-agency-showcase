@@ -8,3 +8,9 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Architecture
+- Keep TanStack Start and TanStack Router for server-rendered React; the platform bootstrap depends on them and React Router cannot replace them.
+- Shared agency navigation, footer and presentation blocks live in `src/components/agency.tsx`, with separate file-based content routes for independently shareable pages.
+- Store imported portfolio content in a browser-safe data module and binary uploads as Lovable Asset pointers to keep SSR deterministic and the repository lightweight.
+- Contact enquiries use an explicitly labelled email draft flow until a delivery service is configured; never imply a message was sent.
