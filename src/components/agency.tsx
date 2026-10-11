@@ -1,0 +1,41 @@
+import { Link } from '@tanstack/react-router';
+import { ArrowUpRight, ArrowRight, Code2, Blocks, Plug, RefreshCw, TrendingUp, Search, Check, Menu, X, ShoppingBag } from 'lucide-react';
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { projects, contact } from '@/data/projects';
+import founder from '@/assets/founder.png.asset.json';
+import fullstack from '@/assets/fullstack.png.asset.json';
+import manager from '@/assets/manager.jpg.asset.json';
+import developerOne from '@/assets/developer-one.jpg';
+import developerTwo from '@/assets/developer-two.jpg';
+
+export const team = [
+ { role: 'Founder & CEO', image: founder.url, name: 'Leadership' },
+ { role: 'Shopify Fullstack Developer', image: fullstack.url, name: 'Shopify engineering' },
+ { role: 'General Manager', image: manager.url, name: 'Operations & delivery' },
+ { role: 'Shopify Developer', image: developerOne, name: 'Storefront development', illustrative: true },
+ { role: 'Shopify Developer', image: developerTwo, name: 'Apps & integrations', illustrative: true },
+];
+export const services = [
+ { icon:Code2, title:'Shopify development', description:'Distinctive storefronts that work as beautifully as they look. Built around your brand, products and customers.', tags:['Custom themes','Shopify Plus','Headless commerce'] },
+ { icon:Blocks, title:'Custom apps & solutions', description:'Turn complex merchant requirements into reliable Shopify apps, checkout functions and tailored business tools.', tags:['Public & private apps','Shopify Functions','Custom solutions'] },
+ { icon:Plug, title:'APIs & integrations', description:'Make your systems work together. Connect your store with the tools, data and workflows your business relies on.', tags:['Third-party apps','ERP & CRM','Admin & Storefront APIs'] },
+ { icon:RefreshCw, title:'Seamless migrations', description:'A new platform, not a fresh start. Move your products, customers and order history with careful data mapping.', tags:['WooCommerce','PrestaShop','Catalog & order migration'] },
+ { icon:TrendingUp, title:'Conversion & growth', description:'Remove friction from browsing to the final order. Improve product discovery, cart experiences and retention.', tags:['CRO','AOV optimization','ROI measurement'] },
+ { icon:Search, title:'SEO & performance', description:'Build a stronger foundation for discovery. Technical SEO, fast storefronts and a better experience on every device.', tags:['Technical SEO','Core Web Vitals','Structured data'] },
+];
+export function Brand() { return <Link to="/" className="wordmark" aria-label="Comeasy home"><span className="logo-symbol" aria-hidden>c</span>comeasy<span className="text-primary">.</span></Link>; }
+export function Header() {
+ const [open,setOpen]=useState(false);
+ const nav = <><Link to="/" className="nav-link" onClick={()=>setOpen(false)}>Home</Link><Link to="/services" className="nav-link" onClick={()=>setOpen(false)}>Services</Link><Link to="/work" className="nav-link" onClick={()=>setOpen(false)}>Our work</Link><Link to="/about" className="nav-link" onClick={()=>setOpen(false)}>About us</Link></>;
+ return <header className="site-header"><div className="container header-inner"><Brand/><nav className="desktop-nav" aria-label="Main navigation">{nav}</nav><Button asChild variant="agency" className="header-cta"><Link to="/contact">Let’s talk <ArrowUpRight/></Link></Button><Button variant="ghost" size="icon" className="mobile-menu-trigger" onClick={()=>setOpen(!open)} aria-expanded={open} aria-label={open?'Close menu':'Open menu'}>{open?<X/>:<Menu/>}</Button>{open&&<nav className="mobile-nav" aria-label="Mobile navigation">{nav}<Link to="/contact" onClick={()=>setOpen(false)}>Let’s talk <ArrowUpRight className="inline size-4"/></Link></nav>}</div></header>;
+}
+export function Footer() { return <footer className="footer"><div className="container"><div className="footer-main"><div className="footer-brand"><Brand/><p className="footer-description">Thoughtful commerce. Powerful engineering.<br/>Your Shopify ambitions, made possible.</p></div><div className="footer-links"><strong>Explore</strong><Link to="/services">Services</Link><Link to="/work">Our work</Link><Link to="/about">Our team</Link><Link to="/contact">Contact</Link></div><div className="footer-links"><strong>Start a conversation</strong><a href={`mailto:${contact.email}`}>Email us <ArrowUpRight className="inline size-3"/></a><a href={`https://wa.me/${contact.telephone.replace('+','')}`} target="_blank" rel="noreferrer">WhatsApp <ArrowUpRight className="inline size-3"/></a><span>Surat, India · Working globally</span></div></div><div className="footer-bottom"><span>© 2026 Comeasy. All rights reserved.</span><span>Independent Shopify agency. Built for what’s next.</span></div></div></footer>; }
+export function CTA() { return <section className="cta-band"><div className="container cta-inner"><div><h2>Great commerce starts<br/>with a conversation.</h2><p>A new store, a complex challenge, or your next stage of growth.</p></div><Button asChild variant="ink" size="lg"><Link to="/contact">Let’s build something <ArrowUpRight/></Link></Button></div></section>; }
+export function SectionHeading({number,label,title,children}:{number:string;label:string;title:string;children?:React.ReactNode}) { return <div className="section-heading"><div><div className="eyebrow"><span className="section-number">{number} /</span>{label}</div><h2>{title}</h2></div>{children}</div>; }
+export function ServiceGrid() { return <div className="service-grid">{services.map(s=><article className="service-item" key={s.title}><div className="service-icon"><s.icon size={22} strokeWidth={1.5}/></div><h3>{s.title}</h3><p>{s.description}</p><ul>{s.tags.map(t=><li key={t}>{t}</li>)}</ul></article>)}</div>; }
+export function ProjectCard({project}:{project:typeof projects[number]}) { return <Link to="/work/$slug" params={{slug:project.slug}} className="project-card"><div className="project-image">{project.image?<img src={project.image} alt={`${project.name} project`} loading="lazy" width={700} height={450}/>:<div className="project-noimage"><ShoppingBag size={38} strokeWidth={1}/>{project.name}</div>}<span className="project-open"><ArrowUpRight size={18}/></span></div><div className="project-meta"><div><h3>{project.name}</h3><p>{project.subtitle}</p></div><span className="tag">{project.category}</span></div></Link>; }
+export function TeamGrid() { return <><div className="team-grid">{team.map((t,i)=><article className="team-card" key={i}><img className="team-image" src={t.image} alt={t.illustrative?'AI-generated developer portrait':t.role} width={768} height={1024} loading="lazy"/><h3>{t.role}</h3><p>{t.name}{t.illustrative&&' · Illustrative portrait'}</p></article>)}</div><p className="team-disclosure">The two additional developer portraits are AI-generated illustrations, not photographs of verified team members.</p></>; }
+export function Approach() { return <div className="approach-grid">{[{title:'Understand',description:'Your requirements, your customers, your goals. We start by asking the right questions.'},{title:'Build',description:'Thoughtful design meets dependable engineering. Every detail earns its place.'},{title:'Launch',description:'Testing, data validation and a careful handover. Ready for real customers and real orders.'},{title:'Grow',description:'Measure what matters. Refine conversion, average order value and long-term returns.'}].map((s,i)=><article className="approach-step" key={s.title}><span className="step-index">0{i+1} <ArrowRight size={14} className="inline float-right"/></span><h3>{s.title}</h3><p>{s.description}</p></article>)}</div>; }
+export function PageHeading({label,title,description}:{label:string;title:string;description:string}) { return <div className="container page-heading reveal"><div className="eyebrow"><span className="status-dot"/>{label}</div><h1>{title}</h1><p>{description}</p></div>; }
+export function metadata(title:string,description:string) { return {meta:[{title:`${title} — Comeasy`},{name:'description',content:description},{property:'og:title',content:`${title} — Comeasy`},{property:'og:description',content:description},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary_large_image'}]}; }

@@ -1,0 +1,4 @@
+import {createFileRoute} from '@tanstack/react-router';
+import {PageHeading,ServiceGrid,Approach,CTA,SectionHeading,metadata} from '@/components/agency';
+export const Route=createFileRoute('/services')({head:()=>metadata('Shopify development & growth services','Explore Comeasy’s Shopify development, custom apps, integrations, platform migrations, technical SEO and conversion optimization services.'),component:Services});
+function Services(){return <main><PageHeading label="Our capabilities" title="From requirements to remarkable commerce." description="A complete Shopify partnership. We bring the strategy, development and ongoing optimization together, so you can focus on building your business."/><div className="container pb-20"><ServiceGrid/></div><section className="section work-section"><div className="container"><SectionHeading number="01" label="A connected process" title="Built around your business."/><Approach/></div></section><CTA/></main>}

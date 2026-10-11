@@ -1,24 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
-
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
-export const Route = createFileRoute("/")({
-  component: Index,
-});
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
+import { createFileRoute, Link } from '@tanstack/react-router';
+import { ArrowUpRight, ArrowRight, Check } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { CTA, ServiceGrid, SectionHeading, ProjectCard, TeamGrid, Approach, team, metadata } from '@/components/agency';
+import { projects } from '@/data/projects';
+import hero from '@/assets/commerce-hero.jpg';
+export const Route = createFileRoute('/')({head:()=>metadata('Shopify agency for ambitious brands','Comeasy is your end-to-end Shopify agency for custom development, apps, integrations, migrations, SEO and conversion growth.'),component:Index});
+function Index() { return <main><section className="hero"><img src={hero} className="hero-image" alt="Sculptural chrome commerce shopping bag" width={1920} height={1024} fetchPriority="high"/><div className="container hero-content reveal"><div className="eyebrow"><span className="status-dot"/>Independent Shopify agency · Global ambition</div><h1>Shopify agency.<br/>Built for <span className="highlight">growth.</span></h1><p className="hero-description">From your first idea to your next big order.<br/>We design, build and grow Shopify experiences that turn ambition into business.</p><div className="hero-actions"><Button asChild variant="ink" size="lg"><Link to="/contact">Let’s build together <ArrowUpRight/></Link></Button><Button asChild variant="outline" size="lg"><Link to="/work">Explore our work <ArrowRight/></Link></Button></div><div className="hero-note"><div className="avatar-stack">{team.slice(0,3).map(t=><img key={t.role} src={t.image} alt="Comeasy team" width={30} height={30}/>)}</div><span>A small team. A big commitment to your success.</span></div></div><div className="hero-object-label"><Check size={13}/>Your next chapter in commerce.</div></section><section className="client-band" aria-label="Brands featured in our work"><div className="container client-inner"><p className="client-intro">COMMERCE EXPERIENCE<br/>ACROSS AMBITIOUS BRANDS</p><span className="client-logo fashion">GUESS</span><span className="client-logo fashion">rag & bone</span><span className="client-logo">HONEST WOLF</span><span className="client-logo fashion">Betsy & Adam</span><span className="client-logo">Goldee Bee</span></div></section><section className="section"><div className="container"><SectionHeading number="01" label="What we do" title="Everything your commerce needs."><p>One partner, from merchant requirements to checkout—and every opportunity beyond it.</p></SectionHeading><ServiceGrid/></div></section><section className="section work-section"><div className="container"><SectionHeading number="02" label="Selected work" title="Good ideas. Real-world impact."><Button asChild variant="outline"><Link to="/work">View all projects <ArrowUpRight/></Link></Button></SectionHeading><div className="project-grid">{[projects[1],projects[2],projects[0],projects[5]].filter(p=>p!==undefined).map(p=><ProjectCard key={p.slug} project={p}/>)}</div></div></section><section className="section"><div className="container"><SectionHeading number="03" label="Our approach" title="Less complexity. More possibility."><p>We connect strategy, engineering and growth. Clear communication at every step. No unnecessary layers.</p></SectionHeading><Approach/></div></section><section className="section work-section"><div className="container"><SectionHeading number="04" label="The people behind Comeasy" title="Your team, beyond your team."><Button asChild variant="outline"><Link to="/about">Meet Comeasy <ArrowUpRight/></Link></Button></SectionHeading><TeamGrid/></div></section><CTA/></main>; }
