@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router';
-import { ArrowUpRight, ArrowRight, Code2, Blocks, Plug, RefreshCw, TrendingUp, Search, Check, Menu, X, ShoppingBag } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Code2, Blocks, Plug, RefreshCw, TrendingUp, Search, Check, Compass, Bot, Menu, X, ShoppingBag } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { projects, contact } from '@/data/projects';
@@ -17,6 +17,8 @@ export const team = [
  { role: 'Shopify Developer', image: developerTwo, name: 'Apps & integrations', illustrative: true },
 ];
 export const services = [
+ { icon:Compass, title:'Consultation', description:'Expert guidance from merchant requirements to final orders. Store audits, roadmaps, platform strategy and growth planning.', tags:['Store audit','Strategy & roadmap','AOV & ROI planning'] },
+ { icon:Bot, title:'AI agents', description:'Custom AI agents for your store: shopping assistants, customer support, catalog automation and operations workflows.', tags:['Support agents','Product discovery','Workflow automation'] },
  { icon:Code2, title:'Shopify development', description:'Distinctive storefronts that work as beautifully as they look. Built around your brand, products and customers.', tags:['Custom themes','Shopify Plus','Headless commerce'] },
  { icon:Blocks, title:'Custom apps & solutions', description:'Turn complex merchant requirements into reliable Shopify apps, checkout functions and tailored business tools.', tags:['Public & private apps','Shopify Functions','Custom solutions'] },
  { icon:Plug, title:'APIs & integrations', description:'Make your systems work together. Connect your store with the tools, data and workflows your business relies on.', tags:['Third-party apps','ERP & CRM','Admin & Storefront APIs'] },
