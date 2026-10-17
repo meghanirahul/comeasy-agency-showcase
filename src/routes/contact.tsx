@@ -61,9 +61,9 @@ function Contact(){
         <label className="form-field">Tell us about your project<textarea name="message" required placeholder="Your goals, challenges and what you’d like to build…"/></label>
         <div><Button variant="ink" size="lg" type="submit" disabled={status==='sending'}>{status==='sending'?'Sending…':'Send enquiry'} <ArrowUpRight/></Button></div>
         <p className={`form-note ${status==='sent'?'form-success':status==='error'?'form-error':''}`} role="status">
-          {status==='sent'?'Thank you! Your enquiry has been sent successfully. We’ll get back to you within one business day.'
+          {status==='sent'?'Thank you! Your enquiry has been sent successfully.'
           :status==='error'?'Sorry, your enquiry could not be sent. Please try again or email us directly.'
-          :'We usually reply within one business day.'}
+          :'Your details are sent straight to our team.'}
         </p>
       </form>
     </div>
