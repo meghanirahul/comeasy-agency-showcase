@@ -84,7 +84,6 @@
 .team-image:hover { filter:saturate(1); }
 .team-card h3 { font-size:14px; font-weight:600; margin-top:15px; }
 .team-card p { font-size:11px; color:var(--muted-foreground); margin-top:5px; line-height:1.6; }
-.team-disclosure { font-size:11px; color:var(--muted-foreground); margin-top:24px; }
 .cta-band { background:var(--primary); padding:65px 0; }
 .cta-inner { display:flex; align-items:center; justify-content:space-between; gap:30px; }
 .cta-inner h2 { font-size:43px; line-height:1.2; font-weight:600; }

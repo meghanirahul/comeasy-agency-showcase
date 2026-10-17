@@ -13,8 +13,8 @@ export const team = [
  { role: 'Founder & CEO', image: founder.url, name: 'Komal Meghani' },
  { role: 'General Manager', image: manager.url, name: 'Rahul Meghani' },
  { role: 'Shopify Fullstack Developer', image: fullstack.url, name: 'Vinay Gurram' },
- { role: 'Shopify Developer', image: developerOne, name: 'Prakash Shrivastav', illustrative: true },
- { role: 'Shopify Developer', image: developerTwo, name: 'Laxmi Ravichandran', illustrative: true },
+ { role: 'Shopify Developer', image: developerOne, name: 'Prakash Shrivastav' },
+ { role: 'Shopify Developer', image: developerTwo, name: 'Laxmi Ravichandran' },
 ];
 export const services = [
  { icon:Code2, title:'Shopify development', description:'Distinctive storefronts that work as beautifully as they look. Built around your brand, products and customers.', tags:['Custom themes','Shopify Plus','Headless commerce'] },
