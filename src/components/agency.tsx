@@ -10,21 +10,21 @@ import developerOne from '@/assets/developer-one.jpg';
 import developerTwo from '@/assets/developer-two.jpg';
 
 export const team = [
- { role: 'Founder & CEO', image: founder.url, name: 'Leadership' },
- { role: 'Shopify Fullstack Developer', image: fullstack.url, name: 'Shopify engineering' },
- { role: 'General Manager', image: manager.url, name: 'Operations & delivery' },
- { role: 'Shopify Developer', image: developerOne, name: 'Storefront development', illustrative: true },
- { role: 'Shopify Developer', image: developerTwo, name: 'Apps & integrations', illustrative: true },
+ { role: 'Founder & CEO', image: founder.url, name: 'Komal Meghani' },
+ { role: 'General Manager', image: manager.url, name: 'Rahul Meghani' },
+ { role: 'Shopify Fullstack Developer', image: fullstack.url, name: 'Vinay Gurram' },
+ { role: 'Shopify Developer', image: developerOne, name: 'Prakash Shrivastav', illustrative: true },
+ { role: 'Shopify Developer', image: developerTwo, name: 'Laxmi Ravichandran', illustrative: true },
 ];
 export const services = [
- { icon:Compass, title:'Consultation', description:'Expert guidance from merchant requirements to final orders. Store audits, roadmaps, platform strategy and growth planning.', tags:['Store audit','Strategy & roadmap','AOV & ROI planning'] },
- { icon:Bot, title:'AI agents', description:'Custom AI agents for your store: shopping assistants, customer support, catalog automation and operations workflows.', tags:['Support agents','Product discovery','Workflow automation'] },
  { icon:Code2, title:'Shopify development', description:'Distinctive storefronts that work as beautifully as they look. Built around your brand, products and customers.', tags:['Custom themes','Shopify Plus','Headless commerce'] },
+ { icon:TrendingUp, title:'Conversion & growth', description:'Remove friction from browsing to the final order. Improve product discovery, cart experiences and retention.', tags:['CRO','AOV optimization','ROI measurement'] },
  { icon:Blocks, title:'Custom apps & solutions', description:'Turn complex merchant requirements into reliable Shopify apps, checkout functions and tailored business tools.', tags:['Public & private apps','Shopify Functions','Custom solutions'] },
  { icon:Plug, title:'APIs & integrations', description:'Make your systems work together. Connect your store with the tools, data and workflows your business relies on.', tags:['Third-party apps','ERP & CRM','Admin & Storefront APIs'] },
  { icon:RefreshCw, title:'Seamless migrations', description:'A new platform, not a fresh start. Move your products, customers and order history with careful data mapping.', tags:['WooCommerce','PrestaShop','Catalog & order migration'] },
- { icon:TrendingUp, title:'Conversion & growth', description:'Remove friction from browsing to the final order. Improve product discovery, cart experiences and retention.', tags:['CRO','AOV optimization','ROI measurement'] },
  { icon:Search, title:'SEO & performance', description:'Build a stronger foundation for discovery. Technical SEO, fast storefronts and a better experience on every device.', tags:['Technical SEO','Core Web Vitals','Structured data'] },
+ { icon:Compass, title:'Consultation', description:'Expert guidance from merchant requirements to final orders. Store audits, roadmaps, platform strategy and growth planning.', tags:['Store audit','Strategy & roadmap','AOV & ROI planning'] },
+ { icon:Bot, title:'AI agents', description:'Custom AI agents for your store: shopping assistants, customer support, catalog automation and operations workflows.', tags:['Support agents','Product discovery','Workflow automation'] },
 ];
 export function Brand() { return <Link to="/" className="wordmark" aria-label="Comeasy home"><span className="logo-symbol" aria-hidden>c</span>comeasy<span className="text-primary">.</span></Link>; }
 export function Header() {
