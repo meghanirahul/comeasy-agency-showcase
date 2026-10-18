@@ -3,16 +3,16 @@ import { ArrowUpRight, ArrowRight, Code2, Blocks, Plug, RefreshCw, TrendingUp, S
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { projects, contact } from '@/data/projects';
-import founder from '@/assets/founder.png.asset.json';
-import fullstack from '@/assets/fullstack.png.asset.json';
-import manager from '@/assets/manager.jpg.asset.json';
+import founder from '@/assets/founder.png';
+import fullstack from '@/assets/fullstack.png';
+import manager from '@/assets/manager.jpg';
 import developerOne from '@/assets/developer-one.jpg';
 import developerTwo from '@/assets/developer-two.jpg';
 
 export const team = [
- { role: 'Founder & CEO', image: founder.url, name: 'Komal Meghani' },
- { role: 'General Manager', image: manager.url, name: 'Rahul Meghani' },
- { role: 'Shopify Fullstack Developer', image: fullstack.url, name: 'Vinay Gurram' },
+ { role: 'Founder & CEO', image: founder, name: 'Komal Meghani' },
+ { role: 'General Manager', image: manager, name: 'Rahul Meghani' },
+ { role: 'Shopify Fullstack Developer', image: fullstack, name: 'Vinay Gurram' },
  { role: 'Shopify Developer', image: developerOne, name: 'Prakash Shrivastav' },
  { role: 'Shopify Developer', image: developerTwo, name: 'Laxmi Ravichandran' },
 ];
