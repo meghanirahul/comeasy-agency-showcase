@@ -17,7 +17,7 @@ function Contact(){
     const data=new FormData(form);
     setStatus('sending');
     try{
-      const res=await fetch(`https://formsubmit.co/ajax/${contact.email}`,{
+      const res=await fetch('https://formsubmit.co/ajax/eeecc2e150d6c41e6249660ce5fbb171',{
         method:'POST',
         headers:{'Content-Type':'application/json',Accept:'application/json'},
         body:JSON.stringify({
